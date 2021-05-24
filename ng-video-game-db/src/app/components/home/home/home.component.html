@@ -14,23 +14,28 @@
 </div>
 
 <div class="games">
-  <div class="game">
-    <div class="game-thumb-container">
-      <img
-        src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic2.gamerantimages.com%2Fwordpress%2Fwp-content%2Fuploads%2F2020%2F04%2Fnes-games-1.jpg&f=1&nofb=1"
-        alt="thumbnail"
-        class="game-thumbnail"
-      />
+  <ng-container *ngFor="let game of games">
+    <div class="game">
+      <div class="game-thumb-container">
+        <img
+          *ngIf="game.background_image"
+          src="{{ game.background_image }}"
+          alt="thumbnail"
+          class="game-thumbnail"
+        />
+        <p *ngIf="!game.background_image">No image</p>
+      </div>
+      <div class="game-description">
+        <p class="game-name">{{ game.name }}</p>
+        <div class="game-platforms">
+          <!-- <img
+            *ngFor="let gamePlatform of game.parent_platforms"
+            class="game-platform"
+            src="assets/images/platforms/{{ gamePlatform.platform.slug }}.svg"
+            alt="{{ gamePlatform.platform.slug }}"
+          /> -->
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="game-description">
-    <div class="game-name">Name</div>
-    <div class="game-platforms">
-      <img
-        src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fimages.wikia.com%2Fnintendo%2Fen%2Fimages%2Fc%2Fc4%2FXBox_Logo.png&f=1&nofb=1"
-        alt="slug"
-        class="game-platform"
-      />
-    </div>
-  </div>
+  </ng-container>
 </div>
