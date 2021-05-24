@@ -1,1 +1,36 @@
-<p>home works!</p>
+<div class="filters">
+  <mat-form-field>
+    <mat-label>Sort</mat-label>
+    <mat-select panelClass="sort-select" [(ngModel)]="sort">
+      <mat-option value="name">Name</mat-option>
+      <mat-option value="-released">Released</mat-option>
+      <mat-option value="-added">Added</mat-option>
+      <mat-option value="-created">Created</mat-option>
+      <mat-option value="-updated">Updated</mat-option>
+      <mat-option value="-rating">Rating</mat-option>
+      <mat-option value="metacritic">Metacritic</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+
+<div class="games">
+  <div class="game">
+    <div class="game-thumb-container">
+      <img
+        src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic2.gamerantimages.com%2Fwordpress%2Fwp-content%2Fuploads%2F2020%2F04%2Fnes-games-1.jpg&f=1&nofb=1"
+        alt="thumbnail"
+        class="game-thumbnail"
+      />
+    </div>
+  </div>
+  <div class="game-description">
+    <div class="game-name">Name</div>
+    <div class="game-platforms">
+      <img
+        src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fimages.wikia.com%2Fnintendo%2Fen%2Fimages%2Fc%2Fc4%2FXBox_Logo.png&f=1&nofb=1"
+        alt="slug"
+        class="game-platform"
+      />
+    </div>
+  </div>
+</div>
